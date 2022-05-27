@@ -41,17 +41,19 @@ for i in range (0,len (sudoku[0])):
                     except ValueError: continue;
         print(snotes)
 
+sodukulen=4
 #process notes based on mainsoduku #column
-for i in range (0,len (sudoku[0])):
-    for j in range (0, len(sudoku)):
-        # print (snotes[i][j])
+for i in range (0,sodukulen):
+    for j in range (0, sodukulen):
+        print (snotes[j][i])
         if len (snotes[j][i]) == 1:
             currcell=snotes[j][i][0]
-            # print(currcell)
-            for k in range (0,len(sudoku)):
-                if i != k :
-                    #print(snotes[i][k])
+            print('loc = ' + str(j) + ' ' + str(i) + ' currcell '+ str(currcell))
+            for k in range (0,sodukulen):
+                if j!= k :
+                    print('before ' + str(snotes[k][i]))
                     try:
                         snotes[k][i].remove(currcell)
+                        print('after ' + str(snotes[k][i]))
                     except ValueError: continue;
         print(snotes)
